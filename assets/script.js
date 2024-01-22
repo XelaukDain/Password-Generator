@@ -1,4 +1,4 @@
-// define a button element
+// Locate button element
 const button = document.getElementById('generate');
 
 // Event listener for button click
@@ -10,8 +10,11 @@ button.addEventListener('click', () => {
             var N = "0123456789";
             var S = "!@#$%^&*()_+";
             var UL = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            var charset = L;
-        
+            var charset = "";
+            
+            if (lowerCase === true) {
+                charset += L;
+            }
             if (upperCase === true) {
                 charset += UL;
             }
@@ -42,6 +45,7 @@ button.addEventListener('click', () => {
     }
 
     // Create a dialog box with checkboxes for options
+    var lowerCase = confirm("Use lowercase letters?");
     var upperCase = confirm("Use uppercase letters?");  
     var numbers  = confirm("use numbers?");
     var special = confirm("use special characters?");
